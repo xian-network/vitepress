@@ -66,8 +66,7 @@ rm get-docker.sh
 ```bash
 git clone https://github.com/xian-network/xian-stack.git
 cd xian-stack
-make setup CORE_BRANCH=<branch-name> CONTRACTING_BRANCH=<branch-name>
-# for RCNet, use `make setup CORE_BRANCH=rcnet CONTRACTING_BRANCH=rcnet`
+make setup CORE_BRANCH=mainnet CONTRACTING_BRANCH=mainnet
 # for Testnet, use `make setup CORE_BRANCH=devnet CONTRACTING_BRANCH=devnet`
 ```
 
@@ -77,7 +76,8 @@ make setup CORE_BRANCH=<branch-name> CONTRACTING_BRANCH=<branch-name>
 make core-build
 make core-up
 make init
-make configure CONFIGURE_ARGS='--moniker <your-moniker> --genesis-file-name genesis-rcnet.json --validator-privkey <priv-key> --seed-node 188.68.33.32 --copy-genesis'
+make configure CONFIGURE_ARGS='--moniker <your-moniker> --genesis-file-name genesis-mainnet.json --validator-privkey <priv-key> --seed-node 152.53.18.220 --copy-genesis'
+# For Testnet : make configure CONFIGURE_ARGS='--moniker <your-moniker> --genesis-file-name genesis-devnet.json --validator-privkey <priv-key> --seed-node 94.16.113.241 --copy-genesis'
 
 ```
 * For a Blockchain Data Service Node
@@ -85,7 +85,8 @@ make configure CONFIGURE_ARGS='--moniker <your-moniker> --genesis-file-name gene
 make core-bds-build
 make core-bds-up
 make init
-make configure CONFIGURE_ARGS='--moniker <your-moniker> --genesis-file-name genesis-rcnet.json --validator-privkey <priv-key> --seed-node 188.68.33.32 --copy-genesis --service-node'
+make configure CONFIGURE_ARGS='--moniker <your-moniker> --genesis-file-name genesis-mainnet.json --validator-privkey <priv-key> --seed-node 152.53.18.220 --copy-genesis --service-node'
+# For Testnet : make configure CONFIGURE_ARGS='--moniker <your-moniker> --genesis-file-name genesis-devnet.json --validator-privkey <priv-key> --seed-node 94.16.113.241 --copy-genesis --service-node'
 ```
 
 ## Starting the Validator Node
